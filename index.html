@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A local, non-explicit demo of a private conversation game's mutual reveal.">
+  <title>Shared Curiosity — Mutual Reveal Demo</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, sans-serif; color: #29252b; background: #fffdf9; }
+    body { max-width: 720px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+    h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); }
+    .card { border: 1px solid #e8dfea; border-radius: 1rem; background: white; padding: 1.25rem; margin: 1rem 0; }
+    .answers { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
+    button { border: 1px solid #cfc5d3; background: white; border-radius: .7rem; padding: .65rem .9rem; cursor: pointer; }
+    button[aria-pressed="true"] { background: #eee5f1; border-color: #75477e; font-weight: 700; }
+    .muted { color: #665f68; line-height: 1.55; }
+    #result { min-height: 3rem; }
+    a { color: #70417a; }
+  </style>
+</head>
+<body>
+  <main>
+    <p><strong>Local interface demo</strong> · No network requests or saved answers</p>
+    <h1>A gentle way to compare notes</h1>
+    <p class="muted">Choose an answer for each person. The demo reveals a conversation prompt after both answers are selected. These sample questions are intentionally light and non-explicit.</p>
+    <section class="card" aria-labelledby="prompt-title">
+      <h2 id="prompt-title">Would you enjoy trying a new café together this month?</h2>
+      <div id="choices"></div>
+    </section>
+    <section class="card" aria-live="polite" aria-atomic="true">
+      <h2>Mutual reveal</h2>
+      <p id="result" class="muted">The result stays hidden until both people choose.</p>
+    </section>
+    <p><a href="https://sharedcuriosity.com/?utm_source=github&amp;utm_medium=repository&amp;utm_campaign=showcase">Visit Shared Curiosity (18+)</a></p>
+    <p class="muted">Prototype only. The production game uses separate devices and server-managed temporary rooms; this local demo does not.</p>
+  </main>
+  <script src="./demo.js"></script>
+</body>
+</html>
